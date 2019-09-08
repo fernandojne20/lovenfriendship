@@ -9,7 +9,7 @@
       </mat-card-header>
       <mat-card-content>
         <mat-form-field class="authentication-container__form__card__input">
-          <input formControlName="member" matInput placeholder="Ingresar Usuario" [errorStateMatcher]="matcher">
+          <input formControlName="member" matInput placeholder="Ingresar Usuario">
         </mat-form-field>
         <mat-error *ngIf="authForm.controls.member.dirty && authForm.controls.member.hasError('required')">
           Usuario <strong>requerido</strong>

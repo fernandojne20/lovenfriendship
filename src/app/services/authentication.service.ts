@@ -10,7 +10,6 @@ export class AuthenticationService {
   constructor(private firestore: AngularFirestore) {}
 
   getMembers(member: string): Observable<unknown[]> {
-    // return this.firestore.collection('members').valueChanges();
     return this.firestore.collection('members', ref => ref.where('name', '==', member))
     .valueChanges();
   }
