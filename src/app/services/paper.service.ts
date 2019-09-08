@@ -21,7 +21,7 @@ export class PaperService {
     .pipe(
       map((papers: DocumentChangeAction<any>[]): DocumentChangeAction<unknown>[] => {
         return papers.map((paper: DocumentChangeAction<any>) => {
-          if (paper.payload.doc.data().member !== member) {
+          if (paper.payload.doc.data().paper !== member) {
             return paper;
           }
         });
