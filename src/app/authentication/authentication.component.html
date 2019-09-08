@@ -1,1 +1,25 @@
-<p>authentication works!</p>
+<div class="authentication-container">
+  <form class="authentication-container__form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <mat-card class="authentication-container__form__card">
+      <img class="authentication-container__form__card__logo" src="../../assets/love.svg" />
+      <mat-card-header>
+        <mat-card-title class="authentication-container__form__card__title">Love & Friendship</mat-card-title>
+
+        <!-- <h1 class="authentication-container__form__card__title">Love & Friendship</h1> -->
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="authentication-container__form__card__input">
+          <input formControlName="member" matInput placeholder="Ingresar Usuario" [errorStateMatcher]="matcher">
+        </mat-form-field>
+        <mat-error *ngIf="authForm.controls.member.dirty && authForm.controls.member.hasError('required')">
+          Usuario <strong>requerido</strong>
+        </mat-error>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="authentication-container__form__card__button" mat-raised-button color="warn" [disabled]="!authForm.valid">Ingresar</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+  </form>
+</div>
